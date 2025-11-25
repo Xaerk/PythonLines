@@ -1,5 +1,7 @@
 import pygame
 import os
+from Algoritmos.linea_dda import DDA
+
 pygame.init()
 
 screen = pygame.display.set_mode((854, 480))
@@ -22,5 +24,3 @@ while running:
     pygame.display.flip()
 
 pygame.quit()
-
-#TODO add delta time and a clock, of course

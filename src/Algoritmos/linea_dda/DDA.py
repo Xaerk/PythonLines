@@ -6,9 +6,6 @@ pygame.init()#iniciador de la libreria
 screen = pygame.display.set_mode((854, 480)) #crear ventana con la resolucion seleccionada
 #Esconder cursor en la pantalla para que esté el pixelado
 
-# Importar assets
-asset_path = os.path.join("..","assets")
-cursor_image = pygame.image.load(asset_path + "/tile_0027.png")
 # Esconder cursor del sistema
 pygame.mouse.set_visible(False)
 
@@ -60,10 +57,9 @@ def dibujar_DDA(surface, x1, y1, x2, y2, color):
 # bucle
 running = True
 while running:
-    #
+
     screen.fill((0, 0, 0))
 
-    #
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -71,14 +67,10 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 running = False
 
-    #
+
     dibujar_DDA(screen, x1, y1, x2, y2, color)
 
-    # MOUSE
-    cursor_cords = pygame.mouse.get_pos()
-    screen.blit(cursor_image, cursor_cords)
 
-    #
     pygame.display.flip()
 
 # CERRAR
