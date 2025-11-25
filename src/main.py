@@ -9,6 +9,7 @@ screen = pygame.display.set_mode((854, 480))
 
 
 
+
 asset_path = os.path.join("..","assets") #<- variable de la ruta a assets
 
 
@@ -21,6 +22,8 @@ while running:
     option = menu.options()
     if option == 1:
         DDA.dibujar_DDA(screen)
+    elif option == 2:
+        running = False
     pygame.display.flip()
 
 
