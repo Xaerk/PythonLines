@@ -25,5 +25,3 @@ while running:
 
 
 pygame.quit()
-
-#TODO encontrar la maldita manera de hacer que se cierre con la x cuando esta el menú abierto
