@@ -74,12 +74,12 @@ while running:
     #
     dibujar_DDA(screen, x1, y1, x2, y2, color)
 
-    # Dibujar cursor
+    # MOUSE
     cursor_cords = pygame.mouse.get_pos()
     screen.blit(cursor_image, cursor_cords)
 
-    # Actualizar pantalla
+    #
     pygame.display.flip()
 
-# Cerrar Pygame
+# CERRAR
 pygame.quit()
