@@ -1,0 +1,3 @@
+DX = 4, DY = 5 diferencias
+pasos = max(4,5) el maximo seria 5 por lo tanto seran 5 pasos
+al final dibujar puntos:
