@@ -2,12 +2,7 @@ import pygame #libreria para crear
 import os #poder interactuar con el sistema operativo
 pygame.init()#iniciador de la libreria
 
-#crear ventana
- #crear ventana con la resolucion seleccionada
-#Esconder cursor en la pantalla para que esté el pixelado
 
-# Esconder cursor del sistema
-pygame.mouse.set_visible(False)
 def dibujar_DDA(surface):
     print("--------------Algoritmo DDA-------------")
     x1 = int(input("x1:"))
@@ -26,6 +21,7 @@ def dibujar_DDA(surface):
 #Vamos a calcular las diferenciales entre los puntos
     dx = x2 - x1
     dy = y2 - y1
+
 #determinar los pasoso necesarios para realizar la linea
 #usamos el valor mayor para ver cual sera los pixeles continuos
 
@@ -37,12 +33,9 @@ def dibujar_DDA(surface):
         return
 
     #calcular cuando moverson en cada paso
-
     x_increment = dx / pasos #cuando avanza x por paso
     y_increment = dy / pasos # cuando avanza y por paso
-
     #punto inicial
-
     x = x1
     y = y1
 

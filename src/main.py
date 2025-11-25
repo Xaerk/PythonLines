@@ -2,6 +2,7 @@ import pygame
 import os
 import menu
 from Algoritmos.linea_dda import DDA
+from Algoritmos.linea_bresenham import Bresenham
 
 pygame.init()
 
@@ -23,7 +24,7 @@ while running:
     if option == 1:
         DDA.dibujar_DDA(screen)
     elif option == 2:
-        running = False
+        Bresenham.dibujar_Bresenham(screen)
     pygame.display.flip()
 
 
