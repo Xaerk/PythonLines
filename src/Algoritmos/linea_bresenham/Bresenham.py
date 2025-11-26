@@ -2,43 +2,65 @@
 import pygame
 pygame.init()
 
+# formula de bresenham en horizontal
+def dibujar_BresenhamH(surface,x1,y1,x2,y2,color):
+    if x1 > x2:
+        x1,x2 = x2,x1
+        y1,y2 = y2,y1
 
-def dibujar_Bresenham(surface):
-    print("--------------Algoritmo Bresenham--------------")
-    x0 = int(input("x1:"))
-    y0 = int(input("Y1:"))
-    x1 = int(input("X2:"))
-    y1 = int(input("Y2:"))
+    dx = x2 - x1
+    dy = y2 - y1
 
-    print("\nColor RGB:")
-    r = int(input("Rojo (0-255):"))
-    g = int(input("Verde (0-255):"))
-    b = int(input("Azul (0-255):"))
-    color = (r, g, b)
-
-    dx = x1 - x0
-    dy = y1 - y0
-
-    xsign = 1 if dx > 0 else -1
-    ysign = 1 if dy > 0 else -1
-
-    dx = abs(dx)
-    dy = abs(dy)
-
-    if dx > dy:
-        xx, xy, yx, yy = xsign, 0, 0, ysign
+    if dy < 0:
+        dir = -1
     else:
-        dx, dy = dy, dx
-        xx, xy, yx, yy = 0, ysign, xsign, 0
+        dir = 1
 
-    D = 2 * dy - dx
-    y = 0
+    dy = dy * dir
 
-    for x in range(dx + 1):
-        surface.set_at((int(x0 + x*xx), int(y0+x*xy+y*yy)), color)
-        if D >= 0:
-            y += 1
-            D -= 2 * dx
-        D += 2 * dy
+    if dx != 0:
+        y = y1
+        p = 2*dy - dx
+        for i in range(dx+1):
+            surface.set_at((x1 + i, y),color)
+            num = x1 + i
+            print("(" + str(num) + "," + str(y) + ")")
+            if p >=0:
+                y += dir
+                p = p - 2*dx
+            p = p + 2*dy
 
-#TODO support lines going to the left
+#Formula de bresenham en vertical
+def dibujar_BresenhamV(surface,x1,y1,x2,y2,color):
+    if y1 > y2:
+        x1,x2 = x2,x1
+        y1,y2 = y2,y1
+
+    dx = x2 - x1
+    dy = y2 - y1
+
+    if dx < 0:
+        dir = -1
+    else:
+        dir = 1
+
+    dx = dx * dir
+
+    if dy != 0:
+        x = x1
+        p = 2*dx - dy
+        for i in range(dy+1):
+            surface.set_at((x, y1 + i),color)
+            num = y1 + i
+            print("(" + str(x) + "," + str(num)+")")
+            if p >=0:
+                x = x + dir
+                p = p - 2*dy
+            p = p + 2*dx
+
+
+def dibujar_Bresenham(surface,x1,y1,x2,y2,color):
+    if abs(x2 - x1) > abs(y2 - y1):
+        dibujar_BresenhamH(surface,x1,y1,x2,y2,color)
+    else:
+        dibujar_BresenhamV(surface,x1,y1,x2,y2,color)

@@ -3,19 +3,7 @@ import os #poder interactuar con el sistema operativo
 pygame.init()#iniciador de la libreria
 
 
-def dibujar_DDA(surface):
-    print("--------------Algoritmo DDA-------------")
-    x1 = int(input("x1:"))
-    y1 = int(input("Y1:"))
-    x2 = int(input("X2:"))
-    y2 = int(input("Y2:"))#con esto aseguramos que debe escribir un valor a la variable seleccionada
-
-    print("\nColor RGB:")
-    r = int(input("Rojo (0-255):"))
-    g = int(input("Verde (0-255):"))
-    b = int(input("Azul (0-255):"))
-    color = (r, g, b) #con esto podremos elegir el nivel de intensidad del color seleccionado segun su valor
-
+def dibujar_DDA(surface,x1,y1,x2,y2,color):
 
 #Algoritmo DDA para dibujar
 #Vamos a calcular las diferenciales entre los puntos

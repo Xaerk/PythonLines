@@ -22,9 +22,11 @@ while running:
             running = False
     option = menu.options()
     if option == 1:
-        DDA.dibujar_DDA(screen)
+        x1,y1,x2,y2,color = menu.datos_linea()
+        DDA.dibujar_DDA(screen,x1,y1,x2,y2,color)
     elif option == 2:
-        Bresenham.dibujar_Bresenham(screen)
+        x1, y1, x2, y2, color = menu.datos_linea()
+        Bresenham.dibujar_Bresenham(screen, x1, y1, x2, y2, color)
     pygame.display.flip()
 
 
