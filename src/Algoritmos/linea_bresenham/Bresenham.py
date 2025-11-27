@@ -24,7 +24,7 @@ def dibujar_BresenhamH(surface,x1,y1,x2,y2,color):
         for i in range(dx+1):
             surface.set_at((x1 + i, y),color)
             num = x1 + i
-            print("(" + str(num) + "," + str(y) + ")")
+            #print("(" + str(num) + "," + str(y) + ")") #testing code (Uncomment if needed)
             if p >=0:
                 y += dir
                 p = p - 2*dx
@@ -52,7 +52,7 @@ def dibujar_BresenhamV(surface,x1,y1,x2,y2,color):
         for i in range(dy+1):
             surface.set_at((x, y1 + i),color)
             num = y1 + i
-            print("(" + str(x) + "," + str(num)+")")
+            #print("(" + str(x) + "," + str(num)+")") #testing code (uncomment if needed)
             if p >=0:
                 x = x + dir
                 p = p - 2*dy
