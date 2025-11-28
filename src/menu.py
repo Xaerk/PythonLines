@@ -5,11 +5,19 @@ def options():
     print("Que figura desea graficar?")
     print("1) Linea recta usando DDA")
     print("2) Linea recta usando Bresenham")
+    print("3) Circulo usando DDA")
+    print("4) Circulo Punto Medio")
     option = int(input("Opción:"))
     if option == 1:
         return 1
     elif option == 2:
         return 2
+    elif option == 3:
+        return 3
+    if option == 4:
+        return 4
+
+
 def datos_linea():
     print("--------------Líneas-------------")
     x1 = int(input("x1:"))
@@ -23,3 +31,17 @@ def datos_linea():
     b = int(input("Azul (0-255):"))
     color = (r, g, b) #con esto podremos elegir el nivel de intensidad del color seleccionado segun su valor
     return x1,y1,x2,y2,color
+
+def datos_circulo():
+    print("--------------Circulos-------------")
+    x1 = int(input("x:"))
+    y1 = int(input("Y:"))
+    radio = int(input("Radio:"))
+
+    print("\nColor RGB:")
+    r = int(input("Rojo (0-255):"))
+    g = int(input("Verde (0-255):"))
+    b = int(input("Azul (0-255):"))
+    color = (r, g, b)
+    return x1,y1,radio,color
+
