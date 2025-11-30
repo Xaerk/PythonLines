@@ -7,6 +7,7 @@ def options():
     print("2) Linea recta usando Bresenham")
     print("3) Circulo usando DDA")
     print("4) Circulo Punto Medio")
+    print("5) Elipse Punto Medio")
     option = int(input("Opción:"))
     if option == 1:
         return 1
@@ -16,6 +17,8 @@ def options():
         return 3
     if option == 4:
         return 4
+    if option == 5:
+        return 5
 
 
 def datos_linea():
@@ -44,4 +47,21 @@ def datos_circulo():
     b = int(input("Azul (0-255):"))
     color = (r, g, b)
     return x1,y1,radio,color
+
+def puntos_elipse():
+    print("--------------Elipse-------------")
+    x = int(input("x:"))
+    y = int(input("y:"))
+    rx = int(input("Radio X:"))
+    ry = int(input("Radio Y:"))
+
+    print("\nColor RGB:")
+    r = int(input("Rojo (0-255):"))
+    g = int(input("Verde (0-255):"))
+    b = int(input("Azul (0-255):"))
+    color = (r, g, b)
+    return x, y, rx, ry, color
+
+
+
 

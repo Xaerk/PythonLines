@@ -5,6 +5,8 @@ from Algoritmos.linea_dda import DDA
 from Algoritmos.linea_bresenham import Bresenham
 from Algoritmos.circulo_dda import Circulo_DDA
 from Algoritmos.circulo_punto_medio import Punto_Medio
+from Algoritmos.elipse_punto_medio import  Elipse_Punto
+
 
 pygame.init()
 screen = pygame.display.set_mode((854, 480))
@@ -39,6 +41,9 @@ while running:
     elif option == 4:
         x1, y1, radio, color = menu.datos_circulo()
         Punto_Medio.Circulo_Medio(screen, x1, y1, radio, color)
+    elif option == 5:
+        x, y, rx, ry, color = menu.puntos_elipse()
+        Elipse_Punto.Elipse_Medio(screen, x, y, rx, ry, color)
     pygame.display.flip()
 
 pygame.quit()
