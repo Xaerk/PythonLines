@@ -8,6 +8,7 @@ def options():
     print("3) Circulo usando DDA")
     print("4) Circulo Punto Medio")
     print("5) Elipse Punto Medio")
+    print("6) Poligono Regular")
     option = int(input("Opción:"))
     if option == 1:
         return 1
@@ -19,10 +20,12 @@ def options():
         return 4
     if option == 5:
         return 5
+    if option == 6:
+        return 6
 
 
 def datos_linea():
-    print("--------------Líneas-------------")
+    print("--------------Línea-------------")
     x1 = int(input("x1:"))
     y1 = int(input("Y1:"))
     x2 = int(input("X2:"))
@@ -36,7 +39,7 @@ def datos_linea():
     return x1,y1,x2,y2,color
 
 def datos_circulo():
-    print("--------------Circulos-------------")
+    print("--------------Circulo-------------")
     x1 = int(input("x:"))
     y1 = int(input("Y:"))
     radio = int(input("Radio:"))
@@ -61,6 +64,19 @@ def puntos_elipse():
     b = int(input("Azul (0-255):"))
     color = (r, g, b)
     return x, y, rx, ry, color
+
+def datos_poligono():
+    print("--------------Poligono-------------")
+    x = int(input("x:"))
+    y = int(input("Y:"))
+    radio = int(input("Distancia:"))
+    lados = int(input("Lados:"))
+    print("\nColor RGB:")
+    r = int(input("Rojo (0-255):"))
+    g = int(input("Verde (0-255):"))
+    b = int(input("Azul (0-255):"))
+    color = (r, g, b)
+    return x,y,radio,lados,color
 
 
 

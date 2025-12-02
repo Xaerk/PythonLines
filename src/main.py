@@ -6,6 +6,7 @@ from Algoritmos.linea_bresenham import Bresenham
 from Algoritmos.circulo_dda import Circulo_DDA
 from Algoritmos.circulo_punto_medio import Punto_Medio
 from Algoritmos.elipse_punto_medio import  Elipse_Punto
+from Algoritmos.poligono_regular import Poligono
 
 
 pygame.init()
@@ -43,7 +44,10 @@ while running:
         Punto_Medio.Circulo_Medio(screen, x1, y1, radio, color)
     elif option == 5:
         x, y, rx, ry, color = menu.puntos_elipse()
-        Elipse_Punto.Elipse_Medio(screen, x, y, rx, ry, color)
+        Elipse_Punto.elipse_medio(screen, x, y, rx, ry, color)
+    elif option == 6:
+        x, y, radio, lados, color = menu.datos_poligono()
+        Poligono.poligono_regular(screen, x, y, radio, lados, color)
     pygame.display.flip()
 
 pygame.quit()

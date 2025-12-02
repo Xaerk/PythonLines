@@ -1,7 +1,7 @@
 import pygame
 pygame.init()
 
-def Elipse_Medio(surface, x, y, rx, ry, color):
+def elipse_medio(surface, x, y, rx, ry, color):
     xc =0
     yc= ry
 
