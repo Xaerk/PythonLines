@@ -8,11 +8,12 @@ from Algoritmos.circulo_punto_medio import Punto_Medio
 from Algoritmos.elipse_punto_medio import  Elipse_Punto
 from Algoritmos.poligono_regular import Poligono
 
-
 pygame.init()
+
+fps = 60
+reloj = pygame.time.Clock()
 screen = pygame.display.set_mode((854, 480))
 asset_path = os.path.join("..", "assets")
-
 
 def process_events():
     for event in pygame.event.get():
@@ -20,8 +21,11 @@ def process_events():
             return False
     return True
 
+menu.seleccion_idioma()
+
 running = True
 while running:
+    reloj.tick(fps)
     if not process_events():
         break
 

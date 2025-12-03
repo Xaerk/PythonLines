@@ -1,15 +1,31 @@
+import administrador_idioma as admin
+import colornames
+from color import colornames_es
+
 #Loop de menú principal en terminal, ajá
 
-option = 0
+def seleccion_idioma():
+    print("Select language / Seleccione idioma:")
+    print("1. English")
+    print("2. Español")
+    choice = input("Choice / Opción: ")
+    if choice == "1":
+        admin.set_idioma('en')
+        print("Language set to English")
+    else:
+        admin.set_idioma('es')
+        print("Idioma establecido a Español")
+
+
 def options():
-    print("Que figura desea graficar?")
-    print("1) Linea recta usando DDA")
-    print("2) Linea recta usando Bresenham")
-    print("3) Circulo usando DDA")
-    print("4) Circulo Punto Medio")
-    print("5) Elipse Punto Medio")
-    print("6) Poligono Regular")
-    option = int(input("Opción:"))
+    print(admin.txt("figure"))
+    print(f"1) {admin.txt("option_1")}")
+    print(f"2) {admin.txt("option_2")}")
+    print(f"3) {admin.txt("option_3")}")
+    print(f"4) {admin.txt("option_4")}")
+    print(f"5) {admin.txt("option_5")}")
+    print(f"6) {admin.txt("option_6")}")
+    option = int(input(f"{admin.txt('option')}"))
     if option == 1:
         return 1
     elif option == 2:
@@ -23,59 +39,77 @@ def options():
     if option == 6:
         return 6
 
+def buscar_color_insensible(nombre_color):
+    # Convierte el input en un string en minusculas sin espacios
+    nombre_normalizado = nombre_color.strip().lower()
+
+    if admin.idioma =="es":
+        dict_actual = colornames_es.colors_es
+    else:
+        dict_actual = colornames._colors
+
+    for nombre, rgb in dict_actual.items():
+        if nombre.lower() == nombre_normalizado:
+            return rgb  # Devuelve el RGB
+    return None
+
+
+def color_set():
+    color_elegido = input(f"{admin.txt('color')}")
+    if color_elegido == 1:
+        print(f"\n{admin.txt('color_rgb')}")
+        r = int(input(f"{admin.txt("red")}"))
+        g = int(input(f"{admin.txt("green")}"))
+        b = int(input(f"{admin.txt("blue")}"))
+        return r, g, b
+    else:
+        color = buscar_color_insensible(color_elegido)
+        if color == None:
+            print(f"{admin.txt("color_failsafe")}")
+            return 0,0,0
+        else:
+            return color
+
+
 
 def datos_linea():
-    print("--------------Línea-------------")
-    x1 = int(input("x1:"))
-    y1 = int(input("Y1:"))
-    x2 = int(input("X2:"))
-    y2 = int(input("Y2:"))#con esto aseguramos que debe escribir un valor a la variable seleccionada
+    print(f"--------------{admin.txt('line')}-------------")
+    x1 = int(input(f"{admin.txt("x1")}"))
+    y1 = int(input(f"{admin.txt("y1")}"))
+    x2 = int(input(f"{admin.txt("x2")}"))
+    y2 = int(input(f"{admin.txt("y2")}"))
 
-    print("\nColor RGB:")
-    r = int(input("Rojo (0-255):"))
-    g = int(input("Verde (0-255):"))
-    b = int(input("Azul (0-255):"))
-    color = (r, g, b) #con esto podremos elegir el nivel de intensidad del color seleccionado segun su valor
+
+    color = color_set()
     return x1,y1,x2,y2,color
 
 def datos_circulo():
-    print("--------------Circulo-------------")
-    x1 = int(input("x:"))
-    y1 = int(input("Y:"))
-    radio = int(input("Radio:"))
+    print(f"--------------{admin.txt('circle')}-------------")
+    x1 = int(input(f"{admin.txt("x")}"))
+    y1 = int(input(f"{admin.txt("y")}"))
+    radio = int(input(f"{admin.txt('radio')}"))
 
-    print("\nColor RGB:")
-    r = int(input("Rojo (0-255):"))
-    g = int(input("Verde (0-255):"))
-    b = int(input("Azul (0-255):"))
-    color = (r, g, b)
+    #llamar funcion para obtener el color desde texto
+    color = color_set()
     return x1,y1,radio,color
 
 def puntos_elipse():
-    print("--------------Elipse-------------")
-    x = int(input("x:"))
-    y = int(input("y:"))
-    rx = int(input("Radio X:"))
-    ry = int(input("Radio Y:"))
+    print(f"--------------{admin.txt('elipse')}-------------")
+    x = int(input(f"{admin.txt('x')}"))
+    y = int(input(f"{admin.txt('y')}"))
+    rx = int(input(f"{admin.txt('rx')}"))
+    ry = int(input(f"{admin.txt('ry')}"))
 
-    print("\nColor RGB:")
-    r = int(input("Rojo (0-255):"))
-    g = int(input("Verde (0-255):"))
-    b = int(input("Azul (0-255):"))
-    color = (r, g, b)
+    color = color_set()
     return x, y, rx, ry, color
 
 def datos_poligono():
-    print("--------------Poligono-------------")
-    x = int(input("x:"))
-    y = int(input("Y:"))
-    radio = int(input("Distancia:"))
-    lados = int(input("Lados:"))
-    print("\nColor RGB:")
-    r = int(input("Rojo (0-255):"))
-    g = int(input("Verde (0-255):"))
-    b = int(input("Azul (0-255):"))
-    color = (r, g, b)
+    print(f"--------------{admin.txt('polygon')}-------------")
+    x = int(input(f"{admin.txt('x')}"))
+    y = int(input(f"{admin.txt('y')}"))
+    radio = int(input(f"{admin.txt('distance')}"))
+    lados = int(input(f"{admin.txt('lado')}"))
+    color = color_set()
     return x,y,radio,lados,color
 
 
