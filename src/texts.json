@@ -27,7 +27,7 @@
     "ry": "Radius Y:",
     "distance": "Distance:",
     "sides": "Sides:",
-    "color": "Which Color would you like to add?",
+    "color": "Which Color would you like to add? (introduce 1 to set rgb values manually): ",
     "color_q": "Insert 1 to change to rgb values",
     "color_failsafe" : "Color not found, using white as default"
   },
@@ -59,7 +59,7 @@
     "ry": "Introduce el radio vertical del elipse:",
     "distance": "Introduce la distancia del centro a los vértices:",
     "sides": "Introduce el número de lados del polígono:",
-    "color": "¿Qué color quisiera añadir?:",
+    "color": "¿Qué color quisiera añadir? (introduzca 1 para asignar valores rgb manualmente):",
     "color_q": "Introduce 1 para cambiar a selección RGB",
     "color_failsafe" : "Color no encontrado, utilizando blanco por defecto"
   }

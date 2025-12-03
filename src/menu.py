@@ -66,7 +66,7 @@ def color_set():
         color = buscar_color_insensible(color_elegido)
         if color == None:
             print(f"{admin.txt("color_failsafe")}")
-            return 0,0,0
+            return 255,255,255
         else:
             return color
 
@@ -85,16 +85,16 @@ def datos_linea():
 
 def datos_circulo():
     print(f"--------------{admin.txt('circle')}-------------")
-    x1 = int(input(f"{admin.txt("x")}"))
-    y1 = int(input(f"{admin.txt("y")}"))
-    radio = int(input(f"{admin.txt('radio')}"))
+    x = int(input(f"{admin.txt("x")}"))
+    y = int(input(f"{admin.txt("y")}"))
+    radio = int(input(f"{admin.txt('radius')}"))
 
     #llamar funcion para obtener el color desde texto
     color = color_set()
-    return x1,y1,radio,color
+    return x,y,radio,color
 
 def puntos_elipse():
-    print(f"--------------{admin.txt('elipse')}-------------")
+    print(f"--------------{admin.txt('ellipse')}-------------")
     x = int(input(f"{admin.txt('x')}"))
     y = int(input(f"{admin.txt('y')}"))
     rx = int(input(f"{admin.txt('rx')}"))
@@ -108,7 +108,7 @@ def datos_poligono():
     x = int(input(f"{admin.txt('x')}"))
     y = int(input(f"{admin.txt('y')}"))
     radio = int(input(f"{admin.txt('distance')}"))
-    lados = int(input(f"{admin.txt('lado')}"))
+    lados = int(input(f"{admin.txt('sides')}"))
     color = color_set()
     return x,y,radio,lados,color
 
