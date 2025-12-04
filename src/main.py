@@ -7,6 +7,8 @@ from Algoritmos.circulo_dda import Circulo_DDA
 from Algoritmos.circulo_punto_medio import Punto_Medio
 from Algoritmos.elipse_punto_medio import  Elipse_Punto
 from Algoritmos.poligono_regular import Poligono
+from Algoritmos.parabola import Parabola_Irving
+from Algoritmos.parabola import Parabola_Estandar
 
 pygame.init()
 
@@ -52,6 +54,12 @@ while running:
     elif option == 6:
         x, y, radio, lados, color = menu.datos_poligono()
         Poligono.poligono_regular(screen, x, y, radio, lados, color)
+    elif option == 7:
+        x1, y1, puntos, color = menu.datos_parabola_Irving()
+        Parabola_Irving.dibujar_parabola(screen, x1, y1, puntos, color)
+    elif option == 8:
+        x,y,p,orientacion,puntos, color = menu.datos_parabola()
+        Parabola_Estandar.parabola_medio(screen, x,y,p,orientacion, puntos, color)
     pygame.display.flip()
 
 pygame.quit()

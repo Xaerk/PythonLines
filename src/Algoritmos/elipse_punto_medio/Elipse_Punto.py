@@ -1,5 +1,3 @@
-import pygame
-pygame.init()
 
 def elipse_medio(surface, x, y, rx, ry, color):
     xc =0

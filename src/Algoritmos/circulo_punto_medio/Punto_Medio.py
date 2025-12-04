@@ -1,5 +1,3 @@
-import pygame
-pygame.init()
 
 
 def Circulo_Medio(surface,x,y,radio,color):

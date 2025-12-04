@@ -1,6 +1,4 @@
-import pygame #libreria para crear
 import os #poder interactuar con el sistema operativo
-pygame.init()#iniciador de la libreria
 
 
 def dibujar_DDA(surface,x1,y1,x2,y2,color):

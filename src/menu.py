@@ -25,6 +25,8 @@ def options():
     print(f"4) {admin.txt("option_4")}")
     print(f"5) {admin.txt("option_5")}")
     print(f"6) {admin.txt("option_6")}")
+    print(f"7) {admin.txt("option_7")}")
+    print(f"8) {admin.txt("option_8")}")
     option = int(input(f"{admin.txt('option')}"))
     if option == 1:
         return 1
@@ -38,6 +40,10 @@ def options():
         return 5
     if option == 6:
         return 6
+    if option == 7:
+        return 7
+    if option == 8:
+        return 8
 
 def buscar_color_insensible(nombre_color):
     # Convierte el input en un string en minusculas sin espacios
@@ -56,7 +62,7 @@ def buscar_color_insensible(nombre_color):
 
 def color_set():
     color_elegido = input(f"{admin.txt('color')}")
-    if color_elegido == 1:
+    if color_elegido == "1":
         print(f"\n{admin.txt('color_rgb')}")
         r = int(input(f"{admin.txt("red")}"))
         g = int(input(f"{admin.txt("green")}"))
@@ -111,6 +117,27 @@ def datos_poligono():
     lados = int(input(f"{admin.txt('sides')}"))
     color = color_set()
     return x,y,radio,lados,color
+
+def datos_parabola_Irving():
+    print(f"--------------{admin.txt('parabola')}-------------")
+    x = int(input(f"{admin.txt('x_p')}"))
+    y = int(input(f"{admin.txt('y_p')}"))
+    puntos = int(input(f"{admin.txt('puntos')}"))
+    color = color_set()
+    return x,y, puntos,color
+
+def datos_parabola():
+    print(f"--------------{admin.txt('parabola')}-------------")
+    x = int(input(f"{admin.txt('x_p')}"))
+    y = int(input(f"{admin.txt('y_p')}"))
+    p = int(input(f"{admin.txt('p')}"))
+    orientation = int(input(f"{admin.txt('orientation')}").lower())
+    puntos = int(input(f"{admin.txt('puntos')}"))
+    color = color_set()
+    return x,y,p, orientation, puntos, color
+
+
+
 
 
 

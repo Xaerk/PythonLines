@@ -1,5 +1,4 @@
-import pygame
-pygame.init()
+
 import math
 from ..linea_bresenham import Bresenham
 def poligono_regular(surface, xc, yc, radio, lados, color):

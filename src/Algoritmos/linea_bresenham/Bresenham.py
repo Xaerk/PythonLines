@@ -1,6 +1,5 @@
 #copypaste de DDA xD
-import pygame
-pygame.init()
+
 
 # formula de bresenham en horizontal
 def dibujar_BresenhamH(surface,x1,y1,x2,y2,color):
