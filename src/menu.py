@@ -27,6 +27,7 @@ def options():
     print(f"6) {admin.txt("option_6")}")
     print(f"7) {admin.txt("option_7")}")
     print(f"8) {admin.txt("option_8")}")
+    print(f"9) {admin.txt("option_9")}")
     option = int(input(f"{admin.txt('option')}"))
     if option == 1:
         return 1
@@ -44,6 +45,8 @@ def options():
         return 7
     if option == 8:
         return 8
+    if option == 9:
+        return 9
 
 def buscar_color_insensible(nombre_color):
     # Convierte el input en un string en minusculas sin espacios

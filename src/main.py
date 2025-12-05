@@ -60,6 +60,8 @@ while running:
     elif option == 8:
         x,y,p,orientacion,puntos, color = menu.datos_parabola()
         Parabola_Estandar.parabola_medio(screen, x,y,p,orientacion, puntos, color)
+    elif option == 9:
+        running = False
     pygame.display.flip()
 
 pygame.quit()
